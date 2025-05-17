@@ -11,7 +11,7 @@
 //     hamburger.classList.toggle("active");
 //     navmenu.classList.toggle("active");
 //  })
-var canvas = $('#wrapper-canva').get(0)
+var canvas = $('#wrapper-c anva').get(0)
 
 var dimensions = {
   width: $(window).width(),
