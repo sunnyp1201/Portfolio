@@ -8,31 +8,99 @@
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- for slick slide -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+     <!-- matter.js -->
+   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js" defer></script>
+<script src="https://cdn/jsdelivr.net/npm/matter-wrap@0.2.0/build/matter-wrap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/matter-attractors@0.1.6/build/matter-attractors.min.js" defer></script>
+<script src="./matter.js" defer></script>
+ 
+
+   <!-- jQuery -->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+   <!-- Slick Slider JS -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" defer></script>
+   <script src="script.js" defer></script>
+  
 
 </head>
 <body>
 	
+<div class="container-first">
 
-	<div class="hero">
-		<button id="theme-toggle">🌙</button>
-		<nav>
-			<h2 class="logo"><span>Hey There!! </span> <br> Welcome</h2>
-			<ul>
-				<li><a href="home">Home</a></li>
-				<li><a href="#">About Us</a></li>
-				
-				<li><a href="#">Skills</a></li>
-				<li><a href="#">Contact</a></li>
-			</ul>
-			<a href="#" class="btn">Software Engineer</a>
+	<div class="card">
+		<div class="card-content">
+			<h5>Enter your name:</h5>
+			<input type="text" id="name-input" placeholder="Your name">
+			<div class="card-button"><button id="name-submit">Submit</button></div>
 			
+		</div>
+	</div>
 
-		</nav>
 
+</div>
+
+
+<div class="container-second" style="display: none;">
+
+	<div class="banner">
+		<div class="banner-content">
+
+			<p class="banner-text">
+				Hey <span id="name-output"></span>, Welcome to my portfolio !
+			</p>
+			
+		</div>
+	</div>
+	<div class="hero">
+
+	<div id="scroll-progress"></div>
+
+	<header class="header">
+
+		<!-- <div class="humburger">
+			<a href="#">&#9776;</a>
+		</div> -->
+        
+		<div class="logo"> <h2><span>Hey There!! </span> <br> Welcome</h2></div>
+		
+
+		<div class="navigation">
+			<nav>
+			<ul class="list">
+				<li class="item"><a href="">Home</a></li>
+				<li class="item"><a href="#about-us">About Us</a></li>
+				
+				<li class="item"><a href="#project">Project</a></li>
+				<li class="item"><a href="#skills">Skills</a></li>
+				<li class="item"><a href="#contact">Contact</a></li>
+			</ul>
+			
+		   </nav>	  
+  
+	    </div>
+
+		<div class="btn"><a href="#" id="role-text">Web Designer</a></div>
+		<div class="mode">
+			<button id="theme-toggle">🌙</button>
+			</div>
+
+			
+			
+	</header>
+    
+	
 		<div class="content">
-			<h2>Hey, my name is</h2>
-			<h1>Sumit<span> Kumar</span></h1>
+			<h2>Hey, my name is</h2> <br>
+			
+			<h1 id="name"></h1>
 			<h3>I'm a Software Engineer.</h3>
 			<div class="newslatter">
 				<form>
@@ -40,30 +108,46 @@
 					<input type="submit" name="submit" value="Lets Start">
 				</form>
 			</div>
-		</div>
+			<div class="arrow">
+				<a href="#about-us" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#f9004d" d="M169.4 502.6c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 402.7 224 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 370.7L86.6 329.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128z"/></svg></a>
+			</div>
+		</div>	
+		
+	</div>
+
+
+	<div id="wrapper-canva">
 	</div>
 
 	<!--About -->
-	<section class="about">
+	<section class="about" id="about-us">
 		<div class="main">
-            <img 
-			 src="./images/SUNNY2.jpg" >
+			<div class="image">
+				<img src="./images/SUNNY2.jpg" >
+				<div class="image-overlay">Hi, I'm Sumit!</div>
+			</div>
+            
 			<div class="about-text">
 				<h2>About Me</h2>
 				<h5>A Student in <span>Global institute technology and management </span></h5>
-				<p> ~ Hey, I'm Sumit Kumar, a passionate Front end Developer. Proficient in working with HTML, CSS and Javascript. Currently, I am a final year B.Tech student at Global institute technology and management in gurgoan. I am fascinated by technology, which is why I choose the Computer Science branch of my B.tech. </p>
-				<button id="button">Let's Talk</button>
+				<p> ~ Hey, I'm Sumit Kumar, a passionate Front end Developer and Back end Developer. Proficient in working with HTML, CSS and Javascript. Currently, I am working in MakkPress Technologies. I am fascinated by technology, which is why I choose the Computer Science branch of my B.tech. </p>
+				<div class="lets-btn"><button class="btn">Let's Talk</button></div>
+			
 			</div>
 		</div>
 	</section>
 
+   
+
 	<!-----skillst----------->
-	<div class="Skills">
+	<div class="Skills" id="skills">
 		<div class="myskills">
 			<h2>My Skills</h2>
 		</div>
 
-		<div class="SkillsMilan">
+		<div class="SkillsMilan slider">
+
 			<div class="card">
 				<i class="fas fa-bars"></i>
 				<h5>Coding</h5>
@@ -107,8 +191,151 @@
 		</div>
 	</div>
 
+        
+    
+   
+
+	<section class="project" id="project">
+		<div class="super-heading">
+             <h1>Projects</h1>
+		</div>
+			<div class="carousel-container">
+
+				<div class="image-text">
+                    <div class="laptop-image">
+                      <a href="./11 febuary 2023-1/index.html" target="_blank">   <img src="./laptop-image/Beats.png" alt="" srcset=""></a>
+					</div>
+					<div class="content-part">
+						<div class="heading">
+                             <h2>Beats Landing Page</h2>
+						</div>
+						<div class="paragraph">
+							<p>A visually appealing landing page for showcasing Beats headphones. Designed to highlight product features and improve user engagement with a modern, responsive layout. <br>
+								<span>Technologies: </span> HTML, CSS, JavaScript</p>
+						</div>
+						<div class="btn">
+							<button>
+							 Know More
+							</button>
+						  </div>
+					</div>
+				</div>
+				<div class="image-text">
+                    <div class="laptop-image">
+                       <a href="/Task 1/index.html" target="_blank" rel="noopener noreferrer">  <img src="./laptop-image/Calculator.png" alt="" srcset=""></a>
+					</div>
+					<div class="content-part">
+						<div class="heading">
+                             <h2>Calculator</h2>
+						</div>
+						<div class="paragraph">
+							<p>A functional and interactive calculator built using vanilla JavaScript, HTML, and CSS. It supports basic arithmetic operations and provides a sleek, responsive design for both desktop and mobile devices. <br>
+								<span>Technologies: </span>HTML, CSS, JavaScript</p>
+						</div>
+						<div class="btn">
+							<button>
+							 Know More
+							</button>
+						  </div>
+					</div>
+				</div>
+				<div class="image-text">
+                    <div class="laptop-image">
+                     <a href="/11 febuary 2023-2/index.html" target="_blank" rel="noopener noreferrer">    <img src="./laptop-image/Real estate.png" alt="" srcset=""></a>
+					</div>
+					<div class="content-part">
+						<div class="heading">
+                             <h2>Real Estate</h2>
+						</div>
+						<div class="paragraph">
+							<p>A professional and responsive real estate page designed to showcase property listings, pricing, and contact details, offering a user-friendly experience for potential buyers. <br>
+								<span>Technologies: </span> HTML, CSS, JavaScript</p>
+						</div>
+						<div class="btn">
+							<button>
+							 Know More
+							</button>
+						  </div>
+					</div>
+				</div>
+				<div class="image-text">
+                    <div class="laptop-image">
+                      <a href="/Task 3/index.html" target="_blank" rel="noopener noreferrer">   <img src="./laptop-image/Todo list.png" alt="" srcset=""></a>
+					</div>
+					<div class="content-part">
+						<div class="heading">
+                             <h2>To-Do List</h2>
+						</div>
+						<div class="paragraph">
+							<p>A simple yet efficient to-do list application that allows users to add, edit, and delete tasks. It includes interactive features to manage daily activities effectively. <br>
+								<span>Technologies: </span> HTML, CSS, JavaScript
+								
+								</p>
+						</div>
+						<div class="btn">
+							<button>
+							 Know More
+							</button>
+						  </div>
+					</div>
+				</div>
+				<div class="image-text">
+                    <div class="laptop-image">
+                       <a href="Task 2/index.html" target="_blank" rel="noopener noreferrer">  <img src="./laptop-image/Tribute page.png" alt="" srcset=""></a>
+					</div>
+					<div class="content-part">
+						<div class="heading">
+                             <h2>Tribute Page</h2>
+						</div>
+						<div class="paragraph">
+							<p>A tribute page dedicated to [Your Chosen Figure], featuring a clean layout, engaging visuals, and a responsive design that adapts seamlessly across devices. <br>
+								<span>Technologies: </span> HTML, CSS</p>
+						</div>
+						<div class="btn">
+							<button>
+							 Know More
+							</button>
+						  </div>
+					</div>
+				</div>
+				
+                 
+			</div>
+
+		
+	</section>
+
+
+	<section class="Major-project" id="Mojor-project">
+		
+		<div class="super-heading">
+			<h1>Major Projects</h1>
+		</div>
+		
+		<div class="carousel-container">
+
+			<div class="image-text">
+				<div class="laptop-image">
+				  <a href="https://makkpress-sandbox2.mybigcommerce.com/" target="_blank">
+					   <img src="./laptop-image/doctor.png" alt="" srcset=""></a>
+				</div>
+		
+				
+			</div>
+
+			<div class="image-text">
+				<div class="laptop-image">
+				  <a href="https://design-recherche.myshopify.com/?_ab=0&_bt=eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJaU5rWlhOcFoyNHRjbVZqYUdWeVkyaGxMbTE1YzJodmNHbG1lUzVqYjIwR09nWkZWQT09IiwiZXhwIjoiMjAyNS0wMi0xN1QwOTo0MzoxOS44ODlaIiwicHVyIjoicGVybWFuZW50X3Bhc3N3b3JkX2J5cGFzcyJ9fQ%3D%3D--8f0f51502696707d9352d5a7a8e2973761a5819a&_fd=0&_sc=1&key=3f0b74c780ee85373720ec3e275f257d046f500961f1ec3811876604a58d7131&preview_theme_id=140339642524" target="_blank">
+					   <img src="./laptop-image/stylum.png" alt="" srcset=""></a>
+				</div>
+         </div> 
+	</section>
+	
+
+
+
 	<!------Contact--->
-	<div class="contact-me">
+	<div class="contact-me" id="contact">
 		<p>Intrested to know more??</p>
 		<a class="button-two" href="mailto:sp935423@gmail.com">Drop me a mail.</a><br>
 		<a class="button-two" href="./Sumit's Resume.pdf" target="_blank">Download Resume</a><br>
@@ -120,7 +347,7 @@
 	</div>
 
 	<!------footer--->
-	<footer>
+	<footer class="footer">
 		<p>Sumit Kumar</p>
 		<p>Our career journey is shaped by our connections. I look forward to connecting with you.</p>
 		<div class="social">
@@ -134,9 +361,12 @@
 			
 		
 		</div>
-
-		<p class="end">CopyRight By Sumit Kumar</p>
+           <div class="end"><p>CopyRight By Sumit Kumar</p></div>
+		
 	</footer>
-	<script src="./script.js"></script>
+
+ </div>
+ 
+
 </body>
 </html>
